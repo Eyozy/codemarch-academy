@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://codemarch-academy.netlify.app/sitemap.xml
+
+# Block access to specific files
+Disallow: /*.json$
+Disallow: /js/
+Disallow: /style/
+
+# Allow access to CSS and JS for better rendering
+Allow: /style/*.css
+Allow: /js/*.js
+
+# Crawl delay (optional)
+Crawl-delay: 1

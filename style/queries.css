@@ -1,190 +1,331 @@
-@media screen and (min-width:481px) {
-  .hero__content--community {
+/* Mobile Base Styles - Up to 767px */
+@media screen and (max-width: 767px) {
+  /* General mobile optimizations */
+  body {
+    font-size: 16px; /* Prevent iOS zoom */
+    overflow-x: hidden;
+  }
+  
+  main {
+    padding: 0 1rem;
+  }
+  
+  /* Navigation adjustments */
+  header .header-container {
+    padding: 0 1rem;
+  }
+
+  header figure {
+    gap: 0.5rem;
+  }
+
+  header figure img {
+    width: 32px;
+  }
+
+  header figure figcaption {
+    font-size: 1rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .nav--button {
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  #navbar--open {
+    padding: 0;
+    background-color: var(--color-background);
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    display: flex;
+    justify-content: center;
     align-items: center;
   }
-
-  .hero__content--community div {
-    width: 70%;
+  
+  #navbar--open nav ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    height: 100%;
+  }
+  
+  #navbar--open nav ul li a {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--color-text);
+    padding: 1rem 2rem;
+    border-radius: var(--radius-md);
+    transition: color 0.3s ease;
+    display: block;
+    text-align: center;
+    min-width: 200px;
+    position: relative;
+  }
+  
+  #navbar--open nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+  
+  #navbar--open nav ul li a:hover {
+    color: var(--color-primary);
   }
 
-  .feature__content--details p:first-child {
-    gap: 15px;
+  #navbar--open nav ul li a:hover::after {
+    width: 80%;
+  }
+  
+  /* Hero section responsive typography */
+  .hero {
+    padding: 3rem 0;
+  }
+  
+  .hero__content {
+    padding: 0 1rem;
+    gap: 2rem;
+    max-width: 100%;
+  }
+  
+  .hero__content--title {
+    white-space: normal;
+    text-align: center;
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    line-height: 1.2;
+    word-wrap: break-word;
+  }
+  
+  .hero__content--subtitle {
+    text-align: center;
+    font-size: clamp(1rem, 4vw, 1.5rem);
+  }
+  
+  .hero__content--description {
+    text-align: center;
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    line-height: 1.6;
+  }
+  
+  /* Responsive CTA button */
+  .cta-button {
+    padding: 0.8rem 1.5rem;
+    font-size: clamp(0.8rem, 3vw, 1rem);
+    min-height: 44px;
+    border-radius: 8px;
+  }
+  
+  /* Section headers responsive typography */
+  .feature__header,
+  .task__header,
+  .projects__header {
+    text-align: center;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .feature__header h2,
+  .task__header h2,
+  .projects__header h2 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+  
+  .feature__header p,
+  .task__header p {
+    font-size: clamp(0.9rem, 3vw, 1.125rem);
+  }
+  
+  /* Feature content - auto-fit for responsiveness */
+  .feature__content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  /* Task gallery responsive */
+  .task__gallery {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 2rem 1rem 0 1rem;
+  }
+  
+  /* Projects responsive */
+  .projects__items {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  /* Mobile image optimization for project cards */
+  .projects__item img {
+    height: 200px;
+    object-fit: contain;
+    padding: var(--space-sm);
+  }
+  
+  /* Footer responsive */
+  .footer-container {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
   }
 
-  .pop__content {
-    width: 70%;
+  .footer-brand {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .footer-social {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .footer-bottom {
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+  
+  .footer-copyright {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    font-size: 0.875rem;
   }
 }
 
-@media screen and (min-width:768px) {
-  header {
-    display: flex;
-    width: 100%;
-  }
-
+/* Tablet and Desktop Styles */
+@media screen and (min-width: 768px) {
+  /* Navigation - Desktop behavior */
   #navbar--open {
     display: block;
-    padding: 0;
     position: static;
     width: auto;
+    height: auto;
     margin-left: auto;
+    background-color: transparent;
+    z-index: auto;
+    box-shadow: none;
+    opacity: 1;
+    transform: none;
+    padding: 0;
+    justify-content: flex-end;
   }
 
-  header nav ul {
+  nav ul {
     flex-direction: row;
+    gap: var(--space-xl);
+    padding: 0;
+    justify-content: flex-end;
+    align-items: center;
   }
 
   .nav--button {
     display: none;
   }
 
+  /* Hero responsive typography */
   .hero__content--title {
-    font-size: 2.4rem;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    text-align: center;
+    white-space: normal;
   }
 
-  .hero__content--description {
-    font-size: 1.5rem;
+  .hero__content--subtitle {
+    font-size: clamp(1.25rem, 3vw, 1.8rem);
   }
 
-  .task__gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 20px;
-  }
-
-  .projects__items {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 20px;
-  }
-
-  .projects__item {
-    margin: 0;
-  }
-
-  .pop__content {
-    width: 450px;
-  }
-
-  footer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    row-gap: 20px;
-    align-items: center;
-  }
-
-  footer h3 {
-    justify-self: left;
-  }
-
-  footer ul {
-    justify-self: right;
-    display: flex;
-    gap: 20px;
-  }
-
-  footer p {
-    grid-column: 1 / -1;
-    justify-self: center;
-  }
-
-  footer p:last-child {
-    margin: 0;
-  }
-}
-
-@media screen and (min-width:1024px) {
-
-  figcaption {
-    font-size: 1.4rem;
-  }
-
-  .hero {
-    flex-direction: row;
-    gap: 30px;
-  }
-
-  .hero__content,
-  .hero__img {
-    width: 50%;
-  }
-
-  .hero__img {
-    order: 1;
-  }
-
+  /* Feature content - 2 columns on tablet */
   .feature__content {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
   }
 
-  .task__gallery {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-  }
-
-  .projects__items {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 25px;
-  }
-
-  .pop__content {
-    width: 480px;
-  }
-}
-
-@media screen and (min-width:1180px) {
+  /* Task gallery - 3 columns on tablet+ */
   .task__gallery {
     grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
   }
 
-  h2 {
-    font-size: 1.675rem;
+  /* Projects - 2 columns on tablet */
+  .projects__items {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+  }
+  
+  /* Tablet image optimization for project cards */
+  .projects__item img {
+    height: 220px;
+    object-fit: contain;
+    padding: var(--space-md);
   }
 
-  p {
-    font-size: 1.125rem;
+  /* Section headers left-aligned on larger screens */
+  .feature__header,
+  .task__header,
+  .projects__header {
+    text-align: left;
   }
 
-  .feature__content--details p span {
-    font-size: 1.1rem;
+  /* Footer horizontal layout */
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--space-xl);
+  }
+  
+  .footer-bottom {
+    padding: var(--space-lg) var(--space-xl) 0 var(--space-xl);
+  }
+  
+  .footer-copyright {
+    display: block;
+    text-align: center;
   }
 }
 
-@media screen and (min-width:1280px) {
-
-  .hero__content--title {
-    font-size: 2.8rem;
-  }
-
-  .hero__content--description {
-    font-size: 1.8rem;
-  }
-
-  .hero__content--details {
-    font-size: 1.2rem;
-  }
-}
-
-@media screen and (min-width:1440px) {
-  .hero__content--title {
-    font-size: 3.6rem;
-    width: 80%;
-  }
-
-  .hero__content--description {
-    font-size: 2rem;
-  }
-
-  .task__gallery {
-    grid-template-columns: repeat(4, 1fr);
+/* Desktop Styles */
+@media screen and (min-width: 1024px) {
+  /* Feature and Projects - 2 columns on desktop to maintain layout */
+  .feature__content {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: var(--space-2xl);
   }
 
   .projects__items {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+  }
+  
+  /* Desktop image optimization for project cards */
+  .projects__item img {
+    height: 250px;
+    object-fit: contain;
+    padding: var(--space-md);
+  }
+
+  /* Larger typography on desktop */
+  .hero__content--title {
+    font-size: clamp(3rem, 6vw, 4rem);
+    text-align: center;
+    white-space: normal;
+  }
+
+  .hero__content--subtitle {
+    font-size: clamp(1.5rem, 4vw, 2rem);
   }
 }

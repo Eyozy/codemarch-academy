@@ -5,98 +5,184 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="./image/Logo.png">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="./style/main.css" as="style">
+  <link rel="preload" href="./style/queries.css" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+  
   <!-- Link to main CSS stylesheet -->
   <link rel="stylesheet" href="./style/main.css">
   <!-- Link to responsive CSS stylesheet -->
   <link rel="stylesheet" href="./style/queries.css">
+  
   <!-- Font Awesome icon library -->
-  <script src="https://kit.fontawesome.com/a7b17b09fe.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/a7b17b09fe.js" crossorigin="anonymous" defer></script>
 
   <!-- Primary Meta Tags -->
-  <title>30 Days CodeCamp - Learn HTML, CSS, Tailwind & Git.</title>
-  <meta name="title" content="30 Days CodeCamp - Learn HTML, CSS, Tailwind & Git." />
+  <title>Learn HTML, CSS & JavaScript - 30 Days CodeCamp | Free Coding Bootcamp</title>
+  <meta name="title" content="Learn HTML, CSS & JavaScript - 30 Days CodeCamp | Free Coding Bootcamp" />
   <meta name="description"
-    content="30 Days CodCamp is a 30-day front-end technology learning project designed for programming enthusiasts." />
+    content="Free 30-day coding bootcamp to learn HTML, CSS, JavaScript & web development. Build 20+ projects, get 24/7 support, daily assignments, and earn a certificate. Start your programming career today - no experience required!" />
+  <meta name="keywords" content="learn coding, free coding bootcamp, HTML tutorial, CSS course, JavaScript training, web development course, frontend development, programming for beginners, coding academy, online coding classes, HTML CSS JavaScript, web design course, responsive web design, coding certification, programming bootcamp" />
+  <meta name="author" content="Codemarch Academy" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="language" content="English" />
+  <meta name="revisit-after" content="7 days" />
+  <meta name="distribution" content="global" />
+  <meta name="rating" content="general" />
+  
+  <!-- Geographic targeting -->
+  <meta name="geo.region" content="US" />
+  <meta name="geo.placename" content="Global" />
+  
+  <!-- Theme color for mobile browsers -->
+  <meta name="theme-color" content="#2563eb" />
+  <meta name="msapplication-TileColor" content="#2563eb" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://codemarch-academy.netlify.app/" />
+  
+  <!-- Alternate languages -->
+  <link rel="alternate" hreflang="en" href="https://codemarch-academy.netlify.app/" />
+  <link rel="alternate" hreflang="x-default" href="https://codemarch-academy.netlify.app/" />
+  
+  <!-- DNS prefetch for external resources -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//kit.fontawesome.com">
+  
+  <!-- Preconnect for critical third-party origins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Sitemap reference -->
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://codemarch-academy.netlify.app/" />
-  <meta property="og:title" content="30 Days CodeCamp - Learn HTML, CSS, Tailwind & Git." />
+  <meta property="og:title" content="Learn HTML, CSS & JavaScript - Free 30 Days Coding Bootcamp" />
   <meta property="og:description"
-    content="30 Days CodCamp is a 30-day front-end technology learning project designed for programming enthusiasts." />
+    content="Free 30-day coding bootcamp to learn HTML, CSS, JavaScript & web development. Build 20+ projects, get 24/7 support, and earn a certificate. Start coding today!" />
   <meta property="og:image"
-    content="https://pub-8f39bd49510b439fb860eeefa52ce61f.r2.dev/2023/09/b4dae9b1a83fa024b9fa641007ad1a45.png" />
+    content="https://codemarch-academy.netlify.app/image/ogImage.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Codemarch Academy - 30 Days Coding Bootcamp" />
+  <meta property="og:site_name" content="Codemarch Academy" />
+  <meta property="og:locale" content="en_US" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://codemarch-academy.netlify.app/" />
-  <meta property="twitter:title" content="30 Days CodeCamp - Learn HTML, CSS, Tailwind & Git." />
+  <meta property="twitter:title" content="Learn HTML, CSS & JavaScript - Free 30 Days Coding Bootcamp" />
   <meta property="twitter:description"
-    content="30 Days CodCamp is a 30-day front-end technology learning project designed for programming enthusiasts." />
+    content="Free 30-day coding bootcamp to learn HTML, CSS, JavaScript & web development. Build 20+ projects, get 24/7 support, and earn a certificate. Start coding today!" />
   <meta property="twitter:image"
-    content="https://pub-8f39bd49510b439fb860eeefa52ce61f.r2.dev/2023/09/b4dae9b1a83fa024b9fa641007ad1a45.png" />
+    content="https://codemarch-academy.netlify.app/image/ogImage.png" />
+  <meta property="twitter:image:alt" content="Codemarch Academy - 30 Days Coding Bootcamp" />
+  <meta property="twitter:site" content="@codemarch" />
+  <meta property="twitter:creator" content="@codemarch" />
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "30 Days CodeCamp - HTML, CSS & JavaScript Bootcamp",
+    "description": "A comprehensive 30-day front-end coding bootcamp covering HTML, CSS, JavaScript, and web development fundamentals",
+    "provider": {
+      "@type": "Organization",
+      "name": "Codemarch Academy",
+      "url": "https://codemarch-academy.netlify.app/",
+      "logo": "https://codemarch-academy.netlify.app/image/Logo.png",
+      "sameAs": [
+        "https://twitter.com/codemarch",
+        "https://www.instagram.com/codemarch_",
+        "https://in.linkedin.com/company/codemarch",
+        "https://www.youtube.com/@codemarchofficial"
+      ]
+    },
+    "courseMode": "online",
+    "educationalLevel": "beginner",
+    "timeRequired": "P30D",
+    "inLanguage": "en",
+    "keywords": ["HTML", "CSS", "JavaScript", "Web Development", "Frontend", "Coding Bootcamp"],
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Beginners"
+    },
+    "offers": {
+      "@type": "Offer",
+      "category": "education",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "online",
+      "instructor": {
+        "@type": "Organization",
+        "name": "Codemarch Academy"
+      }
+    }
+  }
+  </script>
 </head>
 
 <body>
   <header>
-    <figure>
-      <img src="./image/Logo.png" alt="Logo" width="40">
-      <figcaption>30 Days CodeCamp</figcaption>
-    </figure>
-    <!-- Navigation Bar -->
-    <nav id="navbar--open" id="navbar--close">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#showcase">Showcase</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="https://twitter.com/codemarch" target="_blank">Follow</a></li>
-      </ul>
-    </nav>
-    <!-- Navigation buttons -->
-    <div class="nav--button">
-      <a href="#navbar--open" id="toggle--button">
-        <i class="fas fa-bars" id="menu--icon"></i>
-      </a>
-      <a href="#navbar--close" id="close--button">
-        <i class="fas fa-times" id="close--icon"></i>
-      </a>
+    <div class="header-container">
+      <figure>
+        <img src="./image/Logo.png" alt="Logo" width="40">
+        <figcaption>30 Days CodeCamp</figcaption>
+      </figure>
+      <!-- Navigation Bar -->
+      <nav id="navbar--open">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="https://twitter.com/codemarch" target="_blank" rel="noopener noreferrer">Follow</a></li>
+        </ul>
+      </nav>
+      <!-- Navigation buttons -->
+      <div class="nav--button">
+        <a href="#" id="toggle--button">
+          <i class="fas fa-bars" id="menu--icon"></i>
+        </a>
+        <a href="#" id="close--button">
+          <i class="fas fa-times" id="close--icon"></i>
+        </a>
+      </div>
     </div>
-
   </header>
 
   <main>
     <section class="hero">
       <div class="hero__content">
-        <h1 class="hero__content--title">Learn HTML, CSS, Tailwind & Git</h1>
-        <h2 class="hero__content--description">Become a Developer with Practical Experience in 30 Days</h2>
-        <p class="hero__content--details">"30 Days CodeCamp" is a 30-day programming learning event designed for coding
-          enthusiasts. Its goal is to help learners quickly master front-end development technologies such as HTML, CSS,
-          Tailwind, and Git, enabling them to independently complete projects.
-        </p>
-        <div class="hero__content--community">
-          <button><a href="https://discord.com/invite/7g9WddcyKt" target="_blank">Join us</a></button>
-          <div>
-            <figure>
-              <img src="./image/Rizwan.jpg" alt="Rizwan Avatar">
-              <img src="./image/Mohammed_Junaid.jpg" alt="Mohammed Junaid Avatar">
-              <img src="./image/Eyoz.jpg" alt="Eyoz Avatar">
-            </figure>
-            <p>More than 1,000+ people have joined our community</p>
-          </div>
+        <div class="hero__content--header">
+          <h1 class="hero__content--title">Learn HTML, CSS, Tailwind & Git</h1>
+          <h2 class="hero__content--subtitle">Master Front-End Development in 30 Days</h2>
         </div>
-      </div>
-      <div class="hero__img">
-        <img src="./image/programming.svg" alt="An engineer is writing code in front of a computer.">
+        
+        <div class="hero__content--description">
+          <p>Join our comprehensive 30-day coding bootcamp designed for aspiring developers. Build 20+ projects, receive 24/7 support, get daily assignments, and earn a certificate.</p>
+          <p>No prerequisites required - start your journey from beginner to confident front-end developer today.</p>
+        </div>
+        
+        <div class="hero__content--cta">
+          <a href="https://discord.com/invite/7g9WddcyKt" target="_blank" rel="noopener noreferrer" class="cta-button">Start Your Journey</a>
+        </div>
       </div>
     </section>
 
     <!-- Feature Area -->
     <section class="feature" id="features">
       <div class="feature__header">
-        <h2>Course Features</h2>
-        <p>At 30 Days CodeCamp, we offer a unique and comprehensive learning experience with a variety of course
-          features designed to support and enrich your coding journey.</p>
+        <h2>What You'll Get in 30 Days</h2>
+        <p>Experience a complete learning ecosystem with 24/7 support, daily assignments, practical projects, 
+          and professional guidance to transform you into a confident front-end developer.</p>
       </div>
 
       <!-- Course introduction section -->
@@ -104,66 +190,66 @@
         <div class="feature__content--details">
           <p>
             <i class="fas fa-headset icon"></i>
-            <span>Free Tech Support:</span>
+            <span>24/7 Doubt Support</span>
           </p>
-          <p>We provide free technical support to all our students. Our experienced developers are always ready to
-            assist with any technical challenges you may encounter.</p>
+          <p>Get instant help with your coding challenges through our dedicated Discord support system. 
+            Our experienced developers are available around the clock to resolve your doubts and debug issues.</p>
         </div>
         <div class="feature__content--details">
           <p>
             <i class="fas fa-tasks icon"></i>
-            <span>Daily Assignments:</span>
+            <span>Daily Assignments</span>
           </p>
-          <p>Our daily assignments are designed to reinforce your understanding and application of the course material,
-            providing you with ample practice every day.</p>
+          <p>Practice with carefully crafted daily assignments that build your skills progressively. 
+            Each task is designed to reinforce the day's learning and prepare you for real-world projects.</p>
         </div>
         <div class="feature__content--details">
           <p>
             <i class="fas fa-project-diagram icon"></i>
-            <span>Build 10+ Projects:</span>
+            <span>Build 20+ Projects</span>
           </p>
-          <p>Our courses include the creation of over 10 projects, allowing you to apply the skills you've learned in a
-            practical setting.</p>
+          <p>Create an impressive portfolio with over 20 hands-on projects including 2 complete HTML & CSS projects 
+            and 2 complete Tailwind projects. Plus get access to 30 CodePen projects for practice.</p>
         </div>
         <div class="feature__content--details">
           <p>
-            <i class="fas fa-blog icon"></i>
-            <span>Weekly Blogs:</span>
+            <i class="fas fa-question-circle icon"></i>
+            <span>Daily Live Quiz</span>
           </p>
-          <p>We provide weekly blogs that cover various coding topics, keeping you updated with the latest trends and
-            best practices in the industry.</p>
+          <p>Test your knowledge with daily interactive quizzes based on the day's content. 
+            Access to 100+ quiz questions to ensure you master every concept thoroughly.</p>
         </div>
         <div class="feature__content--details">
           <p>
-            <i class="fas fa-id-card-alt icon"></i>
-            <span>Personal Branding Guide:</span>
+            <i class="fas fa-certificate icon"></i>
+            <span>Certification</span>
           </p>
-          <p>We offer a personal branding guide to help you build a strong online presence and showcase your skills to
-            potential employers.</p>
+          <p>Receive an official certificate upon successful completion of all assignments and final test. 
+            Two chances provided to attend the certification test.</p>
         </div>
         <div class="feature__content--details">
           <p>
             <i class="fas fa-book icon"></i>
-            <span>Learning Resources:</span>
+            <span>Premium eBooks</span>
           </p>
-          <p>We provide a wealth of learning resources to supplement your learning, including tutorials, articles, and
-            reference guides.</p>
+          <p>Get access to premium eBooks worth $20 including "JavaScript for Starters: The Complete Guide" 
+            and other valuable learning resources at no extra cost.</p>
         </div>
         <div class="feature__content--details">
           <p>
-            <i class="fas fa-pencil-alt icon"></i>
-            <span>Content Creation Guide:</span>
+            <i class="fas fa-users icon"></i>
+            <span>Freelancing Guide</span>
           </p>
-          <p>Our content creation guide provides tips and strategies for creating engaging and informative content,
-            helping you to share your knowledge with the community.</p>
+          <p>Learn how to start your freelancing career with our comprehensive guide. 
+            Get mentorship on what to do next after completing the bootcamp.</p>
         </div>
         <div class="feature__content--details">
           <p>
-            <i class="fas fa-gift icon"></i>
-            <span>Early Bird Offers from Codemarch:</span>
+            <i class="fas fa-video icon"></i>
+            <span>Content Creation Guide</span>
           </p>
-          <p>As a student of 30 Days CodeCamp, you'll have access to early bird offers from Codemarch, giving you the
-            opportunity to take advantage of our services at discounted rates.</p>
+          <p>Master the art of content creation with our detailed guide. Learn to share your coding journey 
+            and build your personal brand as a developer.</p>
         </div>
 
       </div>
@@ -171,151 +257,121 @@
 
     <!-- Task Area -->
     <section class="task" id="showcase">
-      <h2>Task Showcase</h2>
-      <p>Here, you'll discover a curated gallery of images, shared by our students on various social media platforms.
-        These images illustrate the assignments they've tackled daily and the strides they've made on their coding
-        journey.</p>
+      <div class="task__header">
+        <h2>Student Success Stories</h2>
+        <p>Discover inspiring work from our bootcamp graduates! Browse through real assignments and projects 
+          shared by students on social media with #30daysofcodecamp. See the amazing progress they've made 
+          during their 30-day coding journey.</p>
+      </div>
 
       <div class="task__gallery">
         <div class="task__gallery--item">
-          <img src="./image/task_show-1.jpg" alt="">
+          <a href="https://twitter.com/codemarch/status/day1" target="_blank" rel="noopener noreferrer" aria-label="View Day 1 student assignment showcase on Twitter">
+            <img src="./image/task_show-1.jpg" alt="Student task showcase - Day 1 coding assignment" loading="lazy">
+          </a>
         </div>
         <div class="task__gallery--item">
-          <img src="./image/task_show-2.jpg" alt="">
+          <a href="https://twitter.com/codemarch/status/day2" target="_blank" rel="noopener noreferrer" aria-label="View Day 2 student assignment showcase on Twitter">
+            <img src="./image/task_show-2.jpg" alt="Student task showcase - Day 2 coding assignment" loading="lazy">
+          </a>
         </div>
         <div class="task__gallery--item">
-          <img src="./image/task_show-3.jpg" alt="">
+          <a href="https://twitter.com/codemarch/status/day3" target="_blank" rel="noopener noreferrer" aria-label="View Day 3 student assignment showcase on Twitter">
+            <img src="./image/task_show-3.jpg" alt="Student task showcase - Day 3 coding assignment" loading="lazy">
+          </a>
         </div>
         <div class="task__gallery--item">
-          <img src="./image/task_show-4.jpg" alt="">
+          <a href="https://twitter.com/codemarch/status/day4" target="_blank" rel="noopener noreferrer" aria-label="View Day 4 student assignment showcase on Twitter">
+            <img src="./image/task_show-4.jpg" alt="Student task showcase - Day 4 coding assignment" loading="lazy">
+          </a>
         </div>
         <div class="task__gallery--item">
-          <img src="./image/task_show-5.jpg" alt="">
+          <a href="https://twitter.com/codemarch/status/day5" target="_blank" rel="noopener noreferrer" aria-label="View Day 5 student assignment showcase on Twitter">
+            <img src="./image/task_show-5.jpg" alt="Student task showcase - Day 5 coding assignment" loading="lazy">
+          </a>
         </div>
         <div class="task__gallery--item">
-          <img src="./image/task_show-6.jpg" alt="">
-        </div>
-        <div class="task__gallery--item">
-          <img src="./image/task_show-7.jpg" alt="">
-        </div>
-        <div class="task__gallery--item">
-          <img src="./image/task_show-8.jpg" alt="">
-        </div>
-        <div class="task__gallery--item">
-          <img src="./image/task_show-9.jpg" alt="">
-        </div>
-        <div class="task__gallery--item">
-          <img src="./image/task_show-10.jpg" alt="">
-        </div>
-        <div class="task__gallery--item">
-          <img src="./image/task_show-11.jpg" alt="">
-        </div>
-        <div class="task__gallery--item">
-          <img src="./image/task_show-12.jpg" alt="">
+          <a href="https://twitter.com/codemarch/status/day6" target="_blank" rel="noopener noreferrer" aria-label="View Day 6 student assignment showcase on Twitter">
+            <img src="./image/task_show-6.jpg" alt="Student task showcase - Day 6 coding assignment" loading="lazy">
+          </a>
         </div>
       </div>
       <div class="task__btn">
-        <a href="">View more&nbsp;&rarr;</a>
+        <a href="https://twitter.com/codemarch" target="_blank" rel="noopener noreferrer" aria-label="View more student work on Codemarch Twitter">View more&nbsp;&rarr;</a>
       </div>
 
     </section>
 
     <!-- Projects Area -->
     <section class="projects" id="projects">
-      <h2>Online Projects</h2>
+      <div class="projects__header">
+        <h2>Online Projects</h2>
+      </div>
       <div class="projects__items">
         <div class="projects__item">
-          <img src="./image/Day1.png" alt="">
+          <img src="./image/Day1.png" alt="Day 1 Assignment - HTML fundamentals project screenshot" loading="lazy" width="300" height="200">
           <div class="projects__item--details">
             <h3>Assignment - Day 1</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore
-              magna aliqua.</p>
-            <p>
-              <span id="html-tag">#HTML</span>
-              <a href="">View</a>
-            </p>
+            <p>Build your first webpage using HTML fundamentals. Learn semantic markup, proper document structure, and accessibility best practices.</p>
           </div>
         </div>
 
         <div class="projects__item">
-          <img src="./image/Day2.png" alt="">
+          <img src="./image/Day2.png" alt="Day 2 Assignment - HTML structure project screenshot" loading="lazy" width="300" height="200">
           <div class="projects__item--details">
             <h3>Assignment - Day 2</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore
-              magna aliqua.</p>
-            <p>
-              <span id="html-tag">#HTML</span>
-              <a href="">View</a>
-            </p>
+            <p>Create advanced HTML layouts with forms, tables, and media elements. Master complex document structures and organization.</p>
           </div>
         </div>
 
         <div class="projects__item">
-          <img src="./image/Day3.png" alt="">
+          <img src="./image/Day3.png" alt="Day 3 Assignment - HTML forms project screenshot" loading="lazy" width="300" height="200">
           <div class="projects__item--details">
             <h3>Assignment - Day 3</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore
-              magna aliqua.</p>
-            <p>
-              <span id="html-tag">#HTML</span>
-              <a href="">View</a>
-            </p>
-          </div>
-        </div>
-
-        <div class="projects__item">
-          <img src="./image/Day4.png" alt="">
-          <div class="projects__item--details">
-            <h3>Assignment - Day 4</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore
-              magna aliqua.</p>
-            <p>
-              <span id="html-tag">#HTML</span>
-              <a href="">View</a>
-            </p>
+            <p>Style your webpages with CSS fundamentals. Learn selectors, properties, color theory, and basic layout techniques.</p>
           </div>
         </div>
       </div>
 
       <div class="task__btn">
         <a href="#pop__content">View more&nbsp;&rarr;</a>
-        <!-- Pop-up area -->
-        <div id="pop__content" class="pop__container">
-          <!-- Pop-up content -->
-          <div class="pop__content">
-            <p>The Website is under construction. Please wait......</p>
-            <!-- This is a close button that when clicked closes the popup content and returns to the task area page -->
-            <a href="#projects" class="close-btn">Close</a>
-          </div>
+      </div>
+      
+      <!-- Pop-up area - moved outside of task__btn -->
+      <div id="pop__content" class="pop__container" onclick="if(event.target === this) window.location.hash = '#projects';">
+        <!-- Pop-up content -->
+        <div class="pop__content">
+          <h3 style="margin-bottom: 15px; color: #094067;">🚧 Coming Soon!</h3>
+          <p>We're currently building an extensive library of coding projects for you to explore.</p>
+          
+          <a href="#projects" class="close-btn"><i class="fas fa-times"></i>&nbsp;Close</a>
         </div>
       </div>
     </section>
 
   </main>
 
+
   <!-- Footer Area -->
   <footer>
-    <h3>Codemarch Academy</h3>
-    <!-- Social Links -->
-    <ul>
-      <li><a href="https://twitter.com/codemarch" target="_blank"><i class="fa-brands fa-twitter icon-social"></i></a>
-      </li>
-      <li><a href="https://www.instagram.com/codemarch_/" target="_blank"><i
-            class="fa-brands fa-instagram icon-social"></i></a></li>
-      <li><a href="https://in.linkedin.com/company/codemarch" target="_blank"><i
-            class="fa-brands fa-linkedin-in icon-social"></i></a></li>
-      <li><a href="https://www.youtube.com/@codemarchofficial" target="_blank"><i
-            class="fa-brands fa-youtube icon-social"></i></a></li>
-      <li><a href="https://the-dev-chronicle.beehiiv.com/" target="_blank"><i
-            class="fa-solid fa-blog icon-social"></i></a></li>
-    </ul>
-    <p>&copy; Copyright 2023,All Rights Reserved By <a href="https://twitter.com/Eyozoye" target="_blank">Eyoz</a>.</p>
-    <p>
-      <a href="https://github.com/Eyozy/Codemarch-Academy" target="_blank"><i
-          class="fa-brands fa-github icon-social"></i></a>&nbsp;
-      <a href="https://twitter.com/Eyozoye" target="_blank"><i class="fa-brands fa-twitter icon-social"></i></a>
-    </p>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <p>Codemarch Academy</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://twitter.com/codemarch" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/codemarch_" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://in.linkedin.com/company/codemarch" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.youtube.com/@codemarchofficial" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://the-dev-chronicle.beehiiv.com" target="_blank" rel="noopener noreferrer" aria-label="Blog"><i class="fas fa-rss"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; Copyright 2023, All Rights Reserved By <a href="https://github.com/Eyozy" target="_blank" rel="noopener noreferrer">Eyozy</a>.</p>
+    </div>
   </footer>
+
+  <script src="./js/main.js"></script>
 </body>
 
 </html>
