@@ -98,6 +98,11 @@ img {
   --transition-fast: 0.15s ease;
   --transition-base: 0.3s ease;
   --transition-slow: 0.4s ease;
+  /* Button interaction variables (softer feel) */
+  --btn-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --btn-shadow-focus: 0 8px 20px rgba(37, 99, 235, 0.14);
+  --btn-press-scale: 0.99;
+  --btn-hover-translate: -3px;
   
   /* Shadows */
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -148,53 +153,59 @@ body {
   background-color: var(--color-background);
   color: var(--color-text);
   font-family: var(--font-family);
-  line-height: 1.6;
-  font-size: var(--font-size-base);
-  display: flex;
-  flex-direction: column;
 }
 
-/* Typography Styles */
-h1, h2, h3, h4, h5, h6 {
-  margin-bottom: var(--space-md);
-  line-height: var(--line-height-tight);
-  color: var(--color-text);
-}
+.cta-button {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+      color: var(--color-white);
+      padding: 0.9rem 1.6rem;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: var(--shadow-sm);
+      transition: transform 260ms var(--btn-ease), box-shadow 260ms var(--btn-ease), opacity 180ms var(--transition-fast), background-color 180ms var(--transition-fast);
+      will-change: transform, box-shadow, opacity;
+      transform: translateY(0) scale(1);
+  }
 
-h1 {
-  font-size: var(--font-size-4xl);
-  font-weight: var(--font-weight-bold);
-}
+.cta-button:hover {
+      /* subtle lift + tiny scale for a softer, modern feel */
+      transform: translateY(var(--btn-hover-translate)) scale(1.02);
+      box-shadow: 0 10px 22px rgba(16, 24, 40, 0.08);
+      text-decoration: none;
+  }
 
-h2 {
-  font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-semibold);
-}
+.cta-button:active {
+      /* gentle press feedback */
+      transform: translateY(calc(var(--btn-hover-translate) + 2px)) scale(var(--btn-press-scale));
+      transition: transform 120ms ease;
+  }
 
-h3 {
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-semibold);
-}
+.cta-button:focus {
+      outline: none;
+      /* keep accessible focus without overpowering the layout */
+      box-shadow: var(--btn-shadow-focus);
+      border-radius: 10px;
+  }
 
-p {
-  margin-bottom: var(--space-md);
-  line-height: var(--line-height-normal);
-  color: var(--color-text-light);
-}
+.cta-button.pulse-on-load {
+      animation: cta-pulse 2.2s ease-in-out 1;
+    }
 
-/* Header area style - sticky navigation */
-header {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: var(--header-height);
-  background-color: var(--color-background);
-  position: sticky;
-  top: 0;
-  z-index: 100; /* Lower z-index to be behind the navbar */
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow var(--transition-base);
-}
+@keyframes cta-pulse {
+      0% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 6px 14px rgba(37, 99, 235, 0.06);
+      }
+      50% {
+        transform: translateY(-3px) scale(1.01);
+        box-shadow: 0 14px 28px rgba(37, 99, 235, 0.1);
+      }
+      100% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 6px 14px rgba(37, 99, 235, 0.06);
+      }
+    }
 
 .header-container {
   display: flex;
@@ -560,10 +571,39 @@ main {
   text-transform: none;
   letter-spacing: 0;
   box-shadow: var(--shadow-md);
+  transition: transform 220ms var(--btn-ease), box-shadow 220ms var(--btn-ease), opacity 160ms var(--transition-fast);
+  will-change: transform, box-shadow;
 }
 
 .cta-button:hover {
   color: var(--color-white);
+  transform: translateY(var(--btn-hover-translate));
+  box-shadow: var(--btn-shadow-focus);
+}
+
+.cta-button:active {
+  transform: scale(var(--btn-press-scale));
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.cta-button:focus {
+  outline: none;
+  box-shadow: var(--btn-shadow-focus);
+  transform: translateY(calc(var(--btn-hover-translate) - 2px));
+}
+
+/* Gentle pulse for attention (subtle) */
+@keyframes cta-pulse {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+  100% { transform: translateY(0); }
+}
+
+/* Optional slow pulse on load for desktop */
+@media screen and (min-width: 1024px) {
+  .cta-button.pulse-on-load {
+    animation: cta-pulse 3.5s ease-in-out 1;
+  }
 }
 
 /* Feature area style */

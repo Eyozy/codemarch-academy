@@ -121,10 +121,15 @@
   
   /* Responsive CTA button */
   .cta-button {
-    padding: 0.8rem 1.5rem;
-    font-size: clamp(0.8rem, 3vw, 1rem);
-    min-height: 44px;
-    border-radius: 8px;
+  padding: 0.8rem 1.25rem;
+  font-size: clamp(0.9rem, 3.5vw, 1rem);
+  min-height: 44px;
+  border-radius: 8px;
+  /* avoid heavy transforms on touch devices; use opacity + shadow for feedback */
+  transform: none;
+  transition: box-shadow 180ms var(--transition-fast), opacity 160ms var(--transition-fast), background-color 160ms var(--transition-fast);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  backface-visibility: hidden;
   }
   
   /* Section headers responsive typography */
