@@ -13,12 +13,6 @@ html {
   padding: 0;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  min-width: 320px;
-}
-
 img {
   height: auto;
   max-width: 100%;
@@ -153,59 +147,63 @@ body {
   background-color: var(--color-background);
   color: var(--color-text);
   font-family: var(--font-family);
+  line-height: 1.6;
+  font-size: var(--font-size-base);
+  display: flex;
+  flex-direction: column;
 }
 
-.cta-button {
-      display: inline-block;
-      background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-      color: var(--color-white);
-      padding: 0.9rem 1.6rem;
-      border-radius: 10px;
-      text-decoration: none;
-      box-shadow: var(--shadow-sm);
-      transition: transform 260ms var(--btn-ease), box-shadow 260ms var(--btn-ease), opacity 180ms var(--transition-fast), background-color 180ms var(--transition-fast);
-      will-change: transform, box-shadow, opacity;
-      transform: translateY(0) scale(1);
-  }
+/* Header area style - sticky navigation */
+header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--color-background);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-base);
+  margin-bottom: var(--space-lg);
+}
 
-.cta-button:hover {
-      /* subtle lift + tiny scale for a softer, modern feel */
-      transform: translateY(var(--btn-hover-translate)) scale(1.02);
-      box-shadow: 0 10px 22px rgba(16, 24, 40, 0.08);
-      text-decoration: none;
-  }
+/* Main content wrapper */
+main {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  flex: 1;
+  overflow-x: hidden;
+}
 
-.cta-button:active {
-      /* gentle press feedback */
-      transform: translateY(calc(var(--btn-hover-translate) + 2px)) scale(var(--btn-press-scale));
-      transition: transform 120ms ease;
-  }
+/* Typography Styles */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: var(--space-md);
+  line-height: var(--line-height-tight);
+  color: var(--color-text);
+}
 
-.cta-button:focus {
-      outline: none;
-      /* keep accessible focus without overpowering the layout */
-      box-shadow: var(--btn-shadow-focus);
-      border-radius: 10px;
-  }
+h1 {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+}
 
-.cta-button.pulse-on-load {
-      animation: cta-pulse 2.2s ease-in-out 1;
-    }
+h2 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-semibold);
+}
 
-@keyframes cta-pulse {
-      0% {
-        transform: translateY(0) scale(1);
-        box-shadow: 0 6px 14px rgba(37, 99, 235, 0.06);
-      }
-      50% {
-        transform: translateY(-3px) scale(1.01);
-        box-shadow: 0 14px 28px rgba(37, 99, 235, 0.1);
-      }
-      100% {
-        transform: translateY(0) scale(1);
-        box-shadow: 0 6px 14px rgba(37, 99, 235, 0.06);
-      }
-    }
+h3 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+p {
+  margin-bottom: var(--space-md);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-light);
+}
 
 .header-container {
   display: flex;
@@ -214,10 +212,6 @@ body {
   max-width: var(--container-max-width);
   margin: 0 auto;
   padding: 0 var(--space-lg);
-}
-
-header:hover {
-  box-shadow: var(--shadow-md);
 }
 
 /* Header Logo and Title */
@@ -458,13 +452,57 @@ nav ul li a:hover::after {
   }
 } */
 
-/* Main content wrapper */
-main {
-  max-width: var(--container-max-width);
-  margin: 0 auto;
-  padding: 0 var(--space-lg);
-  flex: 1;
-  overflow-x: hidden; /* Prevent horizontal scrollbar */
+/* CTA Button Styles */
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: var(--color-white);
+  padding: 0.9rem 1.6rem;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  transition: transform 260ms var(--btn-ease), box-shadow 260ms var(--btn-ease), opacity 180ms var(--transition-fast), background-color 180ms var(--transition-fast);
+  will-change: transform, box-shadow, opacity;
+  transform: translateY(0) scale(1);
+}
+
+.cta-button:hover {
+  /* subtle lift + tiny scale for a softer, modern feel */
+  transform: translateY(var(--btn-hover-translate)) scale(1.02);
+  box-shadow: 0 10px 22px rgba(16, 24, 40, 0.08);
+  text-decoration: none;
+}
+
+.cta-button:active {
+  /* gentle press feedback */
+  transform: translateY(calc(var(--btn-hover-translate) + 2px)) scale(var(--btn-press-scale));
+  transition: transform 120ms ease;
+}
+
+.cta-button:focus {
+  outline: none;
+  /* keep accessible focus without overpowering the layout */
+  box-shadow: var(--btn-shadow-focus);
+  border-radius: 10px;
+}
+
+.cta-button.pulse-on-load {
+  animation: cta-pulse 2.2s ease-in-out 1;
+}
+
+@keyframes cta-pulse {
+  0% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.06);
+  }
+  50% {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 14px 28px rgba(37, 99, 235, 0.1);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.06);
+  }
 }
 
 /* Hero section */
@@ -1018,14 +1056,12 @@ main {
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none; /* Make sure it looks like a button */
-  transition: background-color 0.3s ease;
   display: inline-block; /* Ensure proper display */
   font-weight: 500; /* Make text slightly bolder */
 }
 
 .close-btn:hover {
-  background-color: #4a5460;
-  transform: translateY(-1px); /* Subtle lift on hover */
+  color: #fff; /* Keep white text color on hover */
 }
 
 /* Footer Area */
